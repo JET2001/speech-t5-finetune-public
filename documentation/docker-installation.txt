@@ -1,0 +1,19 @@
+1. Install Docker from the apt repository as per https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
+2. To allow Docker to run without sudo, we need to do:
+
+- Create the docker group if it does not exist: sudo groupadd docker
+- Add the user to the docker group: sudo gpasswrd -a $USER docker
+- Recreate the socket to have enough permission for the docker group: sudo chmod 666 /var/run/docker.sock
+https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue
+
+3. After installing NVIDIA, install the NVIDIA Container Toolkit using:
+sudo apt-get install -y nvidia-container-toolkit
+Reference: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
+4. Configure Docker
+Follow instructions as per the link here:
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
+
+5. When you start any container use the flag "--gpus all"
+docker run -itd --rm --gpus all --name ...

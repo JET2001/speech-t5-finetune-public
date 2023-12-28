@@ -1,0 +1,13 @@
+notebook
+torch
+transformers[torch]
+sentencepiece
+datasets
+huggingface_hub
+plotly
+speechbrain
+sagemaker
+librosa
+soundfile
+matplotlib
+tensorboardX

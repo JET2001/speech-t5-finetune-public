@@ -1,0 +1,10 @@
+1. Generate a key using RSA (public-private key pair) and run the following command to create an ssh key,
+using the email registered with github.
+"ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Get your ssh key code under your .ssh directory in the file titled id_rsa.pub. Copy the string within. It will start with something like ‘ssh-rsa’ and end with your email address. You can use vi, vim or another text editor to access the key.
+
+Go to https://github.com/settings/keys and make a new ssh key. You can give it whatever title you want. Paste the key you just copied from id_rsa.pub within the ‘key’ text field and click ‘add ssh key.’ You are now connected to Github and won’t have to sign in every time you want to push to your ec2 instance.
+
+You should now be able to clone directories in ec2.
+

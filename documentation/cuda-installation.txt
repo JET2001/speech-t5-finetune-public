@@ -1,0 +1,25 @@
+1. Check driver specifications on https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-nvidia-driver.html#nvidia-driver-types
+2. Check driver download https://www.nvidia.com/Download/index.aspx?lang=en-us
+3. Fill in the Product Type as per (1) - may be DataCenter/Tesla, fill in Product Series as per (1), and OS as Linux (assuming ec2 instance). 
+- To use Pytorch 2.1.1, you may need NVIDIA Driver 500+ and a CUDA Toolkit v12.2
+
+4. You will then see this screen:
+
+Version:	535.129.03
+Release Date:	2023.10.31
+Operating System:	CBL Mariner, Linux 64-bit
+CUDA Toolkit:	12.2
+Language:	English (US)
+File Size:	325.83 MB
+
+This means that driver version 535 is the one you should use.
+
+In the terminal run these two commands:
+
+sudo apt -y update
+sudo apt install nvidia-driver-535 nvidia-dkms-535 (for version 535)
+
+sudo reboot 
+
+After reconnecting to your instance, run 
+nvidia-smi

@@ -1,0 +1,9 @@
+**/.ipynb_checkpoints
+*.md
+! README.md
+*-access-*.txt
+**/*-imda-*
+**/build-for-gpu
+*.bat
+*.ipynb
+config.py
