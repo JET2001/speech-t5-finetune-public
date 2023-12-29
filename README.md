@@ -1,16 +1,14 @@
 # speech-t5-singlish-finetuning
 
-## Updates (09/12/2023)
+## Summary
 Trained model twice:
 
 Model v1: Finetuned on 50 speakers
 Model v2: Finetuned on 120 speakers
-See model testing in `Testing-Finetuned-Models.ipynb`, and huggingface repository: https://huggingface.co/JET2001/speecht5_tts_imda_nsc_p1
+Similar Spectrogram loss of 0.39
 
-Datasets:
-Embeddings for Dataset 1: https://huggingface.co/datasets/JET2001/hf-imda-dataset-with-embeddings
-Embeddings for Dataset 2: https://huggingface.co/datasets/JET2001/hf-imda-dataset-with-embeddings-150-speakers
-Processed Data for Speech T5: https://huggingface.co/datasets/JET2001/imda-nsc-processed
+See model training in `TTSR_Models.ipynb` and testing in `Testing-Finetuned-Models.ipynb`.
+Huggingface repository: https://huggingface.co/JET2001/speecht5_tts_imda_nsc_p1
 
 Other notes:
 - Model training is done in `TTSR-Models.ipynb`
@@ -21,5 +19,7 @@ Other notes:
 - Refer to documentation directory for notes to set up EC2 instance
 
 ### Storing Secrets
-Create a file `config.py` with the following information:
-- Huggingface token with key `HF_TOKEN`
+```
+# config.py
+HF_TOKEN = "YOUR_TOKEN"
+```
